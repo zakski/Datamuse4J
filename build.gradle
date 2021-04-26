@@ -1,0 +1,31 @@
+/* Standard plugins documentation is available here https://docs.gradle.org/current/userguide/standard_plugins.html. */
+plugins {
+    id 'idea'
+    id 'java'
+}
+
+/* Equivalent to groupid and version in maven, artifactid is set in settings.gradle.  */
+group 'com.szadowsz'
+version '0.1.0-ALPHA'
+
+repositories {
+    mavenCentral()
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.codesnippets4all/quick-json
+    implementation group: 'com.codesnippets4all', name: 'quick-json', version: '1.0.4'
+}
+
+task generateJavadoc(type: Javadoc) {
+    source = sourceSets.main.allJava
+    destinationDir = reporting.file("$projectDir/javadoc")
+    dependsOn jar
+}

@@ -5,7 +5,7 @@
 * as published by Sam Hocevar. See the COPYING file for more details.
 */
 
-package datamuse;
+package com.szadowsz.datamuse;
 
 import java.io.BufferedReader;
 import java.io.IOException;
