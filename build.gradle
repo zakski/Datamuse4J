@@ -19,11 +19,24 @@ idea {
     }
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     // https://mvnrepository.com/artifact/com.codesnippets4all/quick-json
     implementation group: 'com.codesnippets4all', name: 'quick-json', version: '1.0.4'
+
+    // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher
+    testImplementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.7.1'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.1'
+
 }
 
+/**
+ * Task to generate the javadoc folder for easy perusal on Github
+ */
 task generateJavadoc(type: Javadoc) {
     source = sourceSets.main.allJava
     destinationDir = reporting.file("$projectDir/javadoc")
