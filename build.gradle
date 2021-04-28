@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'java'
 }
+apply from: file("versions.gradle")
 
 /* Equivalent to groupid and version in maven, artifactid is set in settings.gradle.  */
 group 'com.szadowsz'
@@ -25,12 +26,18 @@ test {
 
 dependencies {
     // https://mvnrepository.com/artifact/com.codesnippets4all/quick-json
-    implementation group: 'com.codesnippets4all', name: 'quick-json', version: '1.0.4'
+    implementation group: 'com.codesnippets4all', name: 'quick-json', version: versions.quick_json
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit
+    implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: versions.retrofit
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson
+    implementation group: 'com.squareup.retrofit2', name: 'converter-jackson', version: versions.retrofit
 
     // https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher
-    testImplementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.7.1'
+    testImplementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: versions.junit_platform
     // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: versions.junit_jupiter
 
 }
 
