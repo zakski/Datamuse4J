@@ -18,6 +18,7 @@ package com.szadowsz.datamuse;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,71 +32,15 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class DatamuseClientTest {
 
     @Test
-    void meansLikeExampleTest() throws DatamuseException {
+    void meansLikeExampleTest() throws DatamuseException, IOException {
         DatamuseClient dmuse = new DatamuseClient();
         List<WordResult> results = dmuse.meansLike("ringing in the ears");
         long has = results.stream().filter(result -> result.getWord().equalsIgnoreCase("tinnitus")).count();
         assertEquals(1,has);
     }
 
-    @Test
-    void meansLikeNullValidationTest() throws DatamuseException {
-        DatamuseClient dmuse = new DatamuseClient();
-        assertThrows(DatamuseException.DatamuseValException.class, () -> {
-            List<WordResult> results = dmuse.meansLike(null);
-        });
-     }
 
-    @Test
-    void soundsLikeExampleTest() throws DatamuseException {
-        DatamuseClient dmuse = new DatamuseClient();
-        List<WordResult> results = dmuse.soundsLike("jirraf");
-        long has = results.stream().filter(result -> result.getWord().equalsIgnoreCase("giraffe")).count();
-        assertEquals(1,has);
-    }
-
-    @Test
-    void soundsLikeNullValidationTest() throws DatamuseException {
-        DatamuseClient dmuse = new DatamuseClient();
-        assertThrows(DatamuseException.DatamuseValException.class, () -> {
-            List<WordResult> results = dmuse.soundsLike(null);
-        });
-    }
-
-    @Test
-    void speltLikeExampleTest() throws DatamuseException {
-        DatamuseClient dmuse = new DatamuseClient();
-        List<WordResult> results = dmuse.speltLike("hipopatamus");
-        long has = results.stream().filter(result -> result.getWord().equalsIgnoreCase("hippopotamus")).count();
-        assertEquals(1,has);
-    }
-
-    @Test
-    void speltLikeNullValidationTest() throws DatamuseException {
-        DatamuseClient dmuse = new DatamuseClient();
-        assertThrows(DatamuseException.DatamuseValException.class, () -> {
-            List<WordResult> results = dmuse.speltLike(null);
-        });
-    }
-
-
-    @Test
-    void prefixHintExampleTest() throws DatamuseException {
-        DatamuseClient dmuse = new DatamuseClient();
-        List<WordResult> results = dmuse.prefixHintSuggestions("rawand");
-        long has = results.stream().filter(result -> result.getWord().equalsIgnoreCase("rwanda")).count();
-        assertEquals(1,has);
-      }
-
-    @Test
-    void prefixHintNullValidationTest() throws DatamuseException {
-        DatamuseClient dmuse = new DatamuseClient();
-        assertThrows(DatamuseException.DatamuseValException.class, () -> {
-            List<WordResult> results = dmuse.prefixHintSuggestions(null);
-        });
-    }
-
-//    @Test
+    //    @Test
 //    void similarStartsWith() {
 //        DatamuseClient dmuse = new DatamuseClient();
 //        String results = dmuse.findSimilarStartsWith("duck","b");
@@ -115,4 +60,28 @@ public class DatamuseClientTest {
 //        String results = dmuse.wordsStartingWithEndingWith("t","k",2);
 //        assertTrue(results.contains("tank"));
 //    }
+
+    @Test
+    void soundsLikeExampleTest() throws DatamuseException, IOException {
+        DatamuseClient dmuse = new DatamuseClient();
+        List<WordResult> results = dmuse.soundsLike("jirraf");
+        long has = results.stream().filter(result -> result.getWord().equalsIgnoreCase("giraffe")).count();
+        assertEquals(1,has);
+    }
+
+    @Test
+    void speltLikeExampleTest() throws DatamuseException, IOException {
+        DatamuseClient dmuse = new DatamuseClient();
+        List<WordResult> results = dmuse.speltLike("hipopatamus");
+        long has = results.stream().filter(result -> result.getWord().equalsIgnoreCase("hippopotamus")).count();
+        assertEquals(1,has);
+    }
+
+    @Test
+    void prefixHintExampleTest() throws DatamuseException, IOException {
+        DatamuseClient dmuse = new DatamuseClient();
+        List<WordResult> results = dmuse.prefixHintSuggestions("rawand");
+        long has = results.stream().filter(result -> result.getWord().equalsIgnoreCase("rwanda")).count();
+        assertEquals(1,has);
+      }
 }
