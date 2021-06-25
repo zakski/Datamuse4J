@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * Quick and Dirty unit test taken from examples on the Datamuse website to ensure future changes compatibility with the
  * original library.
  */
-public class DatamuseClientTest {
+public class DatamuseClientExampleTest {
 
     @Test
     void meansLikeExampleTest() throws DatamuseException, IOException {

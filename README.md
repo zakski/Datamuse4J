@@ -1,7 +1,8 @@
 # Datamuse4J
 
 ## What Is It
-Datamuse4J is a handler for calling the Datamuse RESTful API. Some background information on Datamuse:
+Datamuse4J is a handler for calling the [Datamuse RESTful API](https://www.datamuse.com/api/). Some background 
+information on Datamuse:
 
 > The Datamuse API is a word-finding query engine for developers. You can use it in your apps to find words that match a 
 > given set of constraints and that are likely in a given context. You can specify a wide variety of constraints on 

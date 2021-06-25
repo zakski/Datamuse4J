@@ -22,9 +22,14 @@ import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
+import retrofit2.http.QueryMap;
 
 import java.io.IOException;
+import java.util.AbstractMap;
+import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DatamuseClient {
 
@@ -121,5 +126,25 @@ public class DatamuseClient {
         // execute api call
         logger.debug("Calling speltLike for wordphrase \"" + sanWordPhrase + "\"");
         return executeCall(service.prefixHintSuggestions(sanWordPhrase));
+    }
+
+    /**
+     * Find words which are "like", for complex queries
+     *
+     * @param options a map of the user supplied query options.
+     * @return A list of words/phrases which are related to the query.
+     * @throws DatamuseException if there is a validation issue or a non HTTP-200 response is returned
+     * @throws IOException if there is a general issue with the rest call
+     */
+    public <T> List<WordResult> complexQuery(Map<DatamuseParam.Code, String> options) throws DatamuseException, IOException {
+        // validation of raw query params
+        DatamuseUtils.validateQueryMap(options);
+
+        // sanitise and convert to string/string map
+        Map<String, String> map = DatamuseUtils.sanitiseQueryMap(options);
+
+        // execute api call
+        logger.debug("Calling complex query");
+        return executeCall(service.complexLike(map));
     }
 }

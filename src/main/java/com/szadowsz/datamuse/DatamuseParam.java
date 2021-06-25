@@ -72,6 +72,10 @@ public class DatamuseParam {
      */
     public static String META_FLAG_F = "f";
 
+    public static Code[] REL_CODES = {Code.REL_JJA, Code.REL_JJB, Code.REL_SYN, Code.REL_TRG, Code.REL_ANT,
+            Code.REL_SPC, Code.REL_GEN, Code.REL_COM, Code.REL_PAR, Code.REL_BGA, Code.REL_BGB, Code.REL_RHY,
+            Code.REL_NRY, Code.REL_HOM, Code.REL_CNS};
+
     /**
      * Parameter Codes for more complex queries.
      */
