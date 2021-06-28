@@ -21,6 +21,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.AbstractMap;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -84,16 +85,31 @@ class DatamuseUtils {
      * @throws DatamuseException.DatamuseValException if the validation of the user parameters has failed
      */
     static <T> void validateQueryMap(Map<DatamuseParam.Code, T> params) throws DatamuseException.DatamuseValException {
+        if (null == params){
+            throw new DatamuseException.DatamuseValException("Param map cannot be null for this query");
+        }
+
         // validate vocabulary
         boolean isEnglish = validateVocab(params.get(DatamuseParam.Code.V));
 
         // make sure relational codes only exist for english vocabs
-        if (!isEnglish){
+        if (!isEnglish) {
             Optional<DatamuseParam.Code> code = Arrays.stream(DatamuseParam.REL_CODES).filter(params::containsKey).findFirst();
-            if (code.isPresent()){
+            if (code.isPresent()) {
                 throw new DatamuseException.DatamuseValException("REL_[***] code \"" + code.get() + "\" detected. REL " +
                         "codes cannot be used for non-english language vocabularies");
             }
+        }
+    }
+
+    static void validateQueryMap(DatamuseParam.Code code, Map<DatamuseParam.Code, String> params) throws DatamuseException.DatamuseValException {
+        if (null != params) {
+            if (params.containsKey(code)) {
+                throw new DatamuseException.DatamuseValException("Duplicate code \"" + code + "\" detected. REL " +
+                        "codes cannot be used for non-english language vocabularies");
+            }
+
+            validateQueryMap(params);
         }
     }
 
@@ -105,6 +121,10 @@ class DatamuseUtils {
      * @return a Map of String/String Key/Value Pairs
      */
     static <T> Map<String, String> sanitiseQueryMap(Map<DatamuseParam.Code,T> params) {
+        if (params == null){
+            return new HashMap<>();
+        }
+
         return params.entrySet().stream()
                 .map(e -> new AbstractMap.SimpleImmutableEntry<>(e.getKey().toString(),sanitiseValue(e.getKey().toString(),e.getValue())))
                 .collect(Collectors.toMap(AbstractMap.SimpleImmutableEntry::getKey, AbstractMap.SimpleImmutableEntry::getValue));

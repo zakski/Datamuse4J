@@ -40,7 +40,7 @@ public class DatamuseParam {
      * inflected form (such as the plural of a noun or a conjugated form of a verb), then an additional defHeadword
      * field will be added indicating the base form from which the definitions are drawn.
      */
-    public static String META_FLAG_D = "d";
+    public static final String META_FLAG_D = "d";
 
     /**
      * Parts of speech 	One or more part-of-speech codes will be added to the tags field of the result object. "n" means
@@ -48,13 +48,13 @@ public class DatamuseParam {
      * these or cannot be determined. Multiple entries will be added when the word's part of speech is ambiguous, with
      * the most popular part of speech listed first. This field is derived from an analysis of Google Books Ngrams data.
      */
-    public static String META_FLAG_P = "p";
+    public static final String META_FLAG_P = "p";
 
     /**
      * Syllable count 	Produced in the numSyllables field of the result object. In certain cases the number of
      * syllables may be ambiguous, in which case the system's best guess is chosen based on the entire query.
      */
-    public static String META_FLAG_S = "s";
+    public static final String META_FLAG_S = "s";
 
     /**
      * Pronunciation 	Produced in the tags field of the result object, prefixed by "pron:". This is the system's best
@@ -64,13 +64,15 @@ public class DatamuseParam {
      * pronunciation will be guessed based on the spelling. In certain cases the pronunciation may be ambiguous, in
      * which case the system's best guess is chosen based on the entire query.
      */
-    public static String META_FLAG_R = "r";
+    public static final String META_FLAG_R = "r";
 
     /**
      * Word frequency 	Produced in the tags field of the result object, prefixed by "f:". The value is the number of
      * times the word (or multi-word phrase) occurs per million words of English text according to Google Books Ngrams.
      */
-    public static String META_FLAG_F = "f";
+    public static final String META_FLAG_F = "f";
+
+    public static final String META_FLAGS = META_FLAG_S + META_FLAG_D + META_FLAG_F + META_FLAG_R + META_FLAG_P;
 
     public static Code[] REL_CODES = {Code.REL_JJA, Code.REL_JJB, Code.REL_SYN, Code.REL_TRG, Code.REL_ANT,
             Code.REL_SPC, Code.REL_GEN, Code.REL_COM, Code.REL_PAR, Code.REL_BGA, Code.REL_BGB, Code.REL_RHY,

@@ -27,6 +27,7 @@ import retrofit2.http.QueryMap;
 import java.io.IOException;
 import java.util.AbstractMap;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -70,13 +71,27 @@ public class DatamuseClient {
      * @return A list of similar words.
      */
     public List<WordResult> meansLike(String wordPhrase) throws DatamuseException, IOException {
+        return meansLike(wordPhrase,null);
+    }
+
+    /**
+     * Returns a list of similar words to the word/phrase supplied.
+     *
+     * @param wordPhrase A word or phrase.
+     * @return A list of similar words.
+     */
+    public List<WordResult> meansLike(String wordPhrase, Map<DatamuseParam.Code, String> options) throws DatamuseException, IOException {
         // validation and sanitation
         DatamuseUtils.validateWordPhrase(wordPhrase);
+        DatamuseUtils.validateQueryMap(DatamuseParam.Code.ML,options);
+
+        // sanitise and convert to string/string map
+        Map<String, String> map = DatamuseUtils.sanitiseQueryMap(options);
         String sanWordPhrase = DatamuseUtils.replaceSpaces(wordPhrase);
 
         // execute api call
         logger.debug("Calling meanslike for wordphrase \"" + sanWordPhrase + "\"");
-        return executeCall(service.meansLike(sanWordPhrase));
+        return executeCall(service.meansLike(sanWordPhrase,map));
     }
 
     /**
@@ -86,14 +101,28 @@ public class DatamuseClient {
      * @return A list of words/phrases which sound similar when spoken.
      */
    public List<WordResult> soundsLike(String wordPhrase) throws DatamuseException, IOException {
-       // validation and sanitation
-       DatamuseUtils.validateWordPhrase(wordPhrase);
-       String sanWordPhrase = DatamuseUtils.replaceSpaces(wordPhrase);
-
-       // execute api call
-       logger.debug("Calling soundsLike for wordphrase \"" + sanWordPhrase + "\"");
-       return executeCall(service.soundsLike(sanWordPhrase));
+       return soundsLike(wordPhrase,null);
    }
+
+    /**
+     * Find words which sound the same as the specified word/phrase when spoken.
+     *
+     * @param wordPhrase A word or phrase.
+     * @return A list of words/phrases which sound similar when spoken.
+     */
+    public List<WordResult> soundsLike(String wordPhrase, Map<DatamuseParam.Code, String> options) throws DatamuseException, IOException {
+        // validation and sanitation
+        DatamuseUtils.validateWordPhrase(wordPhrase);
+        DatamuseUtils.validateQueryMap(DatamuseParam.Code.SL,options);
+
+        // sanitise and convert to string/string map
+        Map<String, String> map = DatamuseUtils.sanitiseQueryMap(options);
+        String sanWordPhrase = DatamuseUtils.replaceSpaces(wordPhrase);
+
+        // execute api call
+        logger.debug("Calling soundsLike for wordphrase \"" + sanWordPhrase + "\"");
+        return executeCall(service.soundsLike(sanWordPhrase,map));
+    }
 
     /**
      * Find words which are spelt the same as the specified word/phrase.
@@ -102,13 +131,28 @@ public class DatamuseClient {
      * @return A list of words/phrases which are spelt similar.
      */
     public List<WordResult> speltLike(String wordPhrase) throws DatamuseException, IOException {
+        return speltLike(wordPhrase,null);
+
+    }
+
+    /**
+     * Find words which are spelt the same as the specified word/phrase.
+     *
+     * @param wordPhrase A word or phrase.
+     * @return A list of words/phrases which are spelt similar.
+     */
+    public List<WordResult> speltLike(String wordPhrase, Map<DatamuseParam.Code, String> options) throws DatamuseException, IOException {
         // validation and sanitation
         DatamuseUtils.validateWordPhrase(wordPhrase);
+        DatamuseUtils.validateQueryMap(DatamuseParam.Code.SP,options);
+
+        // sanitise and convert to string/string map
+        Map<String, String> map = DatamuseUtils.sanitiseQueryMap(options);
         String sanWordPhrase = DatamuseUtils.replaceSpaces(wordPhrase);
 
         // execute api call
         logger.debug("Calling speltLike for wordphrase \"" + sanWordPhrase + "\"");
-        return executeCall(service.speltLike(sanWordPhrase));
+        return executeCall(service.speltLike(sanWordPhrase,map));
     }
 
     /**
@@ -146,5 +190,26 @@ public class DatamuseClient {
         // execute api call
         logger.debug("Calling complex query");
         return executeCall(service.complexLike(map));
+    }
+
+    /**
+     * Find words which are spelt the same as the specified word/phrase.
+     *
+     * @param wordPhrase A word or phrase.
+     * @return A list of words/phrases which are spelt similar.
+     */
+    public List<WordResult> metadataOf(String wordPhrase) throws DatamuseException, IOException {
+        // validation and sanitation
+        DatamuseUtils.validateWordPhrase(wordPhrase);
+        String sanWordPhrase = DatamuseUtils.replaceSpaces(wordPhrase);
+
+        Map<String, String> map = new HashMap<>();
+        map.put(DatamuseParam.Code.QE.toString(), DatamuseParam.Code.SP.toString());
+        map.put(DatamuseParam.Code.MD.toString(), DatamuseParam.META_FLAGS);
+        map.put(DatamuseParam.Code.MAX.toString(), "1");
+
+        // execute api call
+        logger.debug("Calling metadataOf for wordphrase \"" + sanWordPhrase + "\"");
+        return executeCall(service.speltLike(sanWordPhrase,map));
     }
 }

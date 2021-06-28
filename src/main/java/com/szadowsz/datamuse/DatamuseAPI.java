@@ -37,7 +37,7 @@ interface DatamuseAPI {
      * @return A list of similar words.
      */
     @GET("words")
-    Call<List<WordResult>> meansLike(@Query("ml") String wordPhrase);
+    Call<List<WordResult>> meansLike(@Query("ml") String wordPhrase, @QueryMap Map<String, String> options);
 
     /**
      * Find words which sound the same as the specified word/phrase when spoken.
@@ -46,7 +46,7 @@ interface DatamuseAPI {
      * @return A list of words/phrases which sound similar when spoken.
      */
     @GET("words")
-    Call<List<WordResult>> soundsLike(@Query("sl") String wordPhrase);
+    Call<List<WordResult>> soundsLike(@Query("sl") String wordPhrase, @QueryMap Map<String, String> options);
 
     /**
      * Find words which are spelt the same as the specified word/phrase.
@@ -55,7 +55,7 @@ interface DatamuseAPI {
      * @return A list of words/phrases which are spelt similar.
      */
     @GET("words")
-    Call<List<WordResult>> speltLike(@Query("sp") String wordPhrase);
+    Call<List<WordResult>> speltLike(@Query("sp") String wordPhrase, @QueryMap Map<String, String> options);
 
     /**
      * Find words which are "like", for complex queries
