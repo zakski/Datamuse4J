@@ -121,6 +121,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public static enum <span class="typeNameLabel">DatamuseParam.Code</span>
 extends java.lang.Enum&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>&gt;</pre>
+<div class="block">Parameter Codes for more complex queries.</div>
 </li>
 </ul>
 </div>
@@ -167,103 +168,109 @@ extends java.lang.Enum&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#QE">QE</a></span></code>
+<div class="block">Query echo: The presence of this parameter asks the system to prepend a result to the output that describes
+ the query string from some other parameter, specified as the argument value.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#RC">RC</a></span></code>
 <div class="block">Right context: An optional hint to the system about the word that appears immediately to the right of the target
  word in a sentence.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_ANT">REL_ANT</a></span></code>
-<div class="block">Antonyms (per WordNet)  late → early</div>
+<div class="block">Antonyms (per WordNet)  late -> early</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_BGA">REL_BGA</a></span></code>
-<div class="block">Frequent followers (w′ such that P(w′|w) ≥ 0.001, per Google Books Ngrams)      wreak → havoc</div>
+<div class="block">Frequent followers (w′ such that P(w′|w) ≥ 0.001, per Google Books Ngrams)      wreak -> havoc</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_BGB">REL_BGB</a></span></code>
-<div class="block">Frequent predecessors (w′ such that P(w|w′) ≥ 0.001, per Google Books Ngrams)   havoc → wreak</div>
+<div class="block">Frequent predecessors (w′ such that P(w|w′) ≥ 0.001, per Google Books Ngrams)   havoc -> wreak</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_CNS">REL_CNS</a></span></code>
-<div class="block">Consonant match         sample → simple</div>
+<div class="block">Consonant match         sample -> simple</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_COM">REL_COM</a></span></code>
-<div class="block">"Comprises" (direct holonyms, per WordNet)      car → accelerator</div>
+<div class="block">"Comprises" (direct holonyms, per WordNet)      car -> accelerator</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_GEN">REL_GEN</a></span></code>
-<div class="block">"More general than" (direct hyponyms, per WordNet)      boat → gondola</div>
+<div class="block">"More general than" (direct hyponyms, per WordNet)      boat -> gondola</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_HOM">REL_HOM</a></span></code>
-<div class="block">Homophones (sound-alike words)  course → coarse</div>
+<div class="block">Homophones (sound-alike words)  course -> coarse</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_JJA">REL_JJA</a></span></code>
-<div class="block">Popular nouns modified by the given adjective, per Google Books Ngrams  gradual → increase.</div>
+<div class="block">Popular nouns modified by the given adjective, per Google Books Ngrams  gradual -> increase.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_JJB">REL_JJB</a></span></code>
-<div class="block">Popular adjectives used to modify the given noun, per Google Books Ngrams       beach → sandy.</div>
+<div class="block">Popular adjectives used to modify the given noun, per Google Books Ngrams       beach -> sandy.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_NRY">REL_NRY</a></span></code>
-<div class="block">Approximate rhymes (per RhymeZone)      forest → chorus</div>
+<div class="block">Approximate rhymes (per RhymeZone)      forest -> chorus</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_PAR">REL_PAR</a></span></code>
-<div class="block">"Part of" (direct meronyms, per WordNet)        trunk → tree</div>
+<div class="block">"Part of" (direct meronyms, per WordNet)        trunk -> tree</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_RHY">REL_RHY</a></span></code>
-<div class="block">Rhymes ("perfect" rhymes, per RhymeZone)        spade → aid</div>
+<div class="block">Rhymes ("perfect" rhymes, per RhymeZone)        spade -> aid</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_SPC">REL_SPC</a></span></code>
-<div class="block">"Kind of" (direct hypernyms, per WordNet)       gondola → boat</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_SYN">REL_SYN</a></span></code>
-<div class="block">Synonyms (words contained within the same WordNet synset)       ocean → sea.</div>
+<div class="block">"Kind of" (direct hypernyms, per WordNet)       gondola -> boat</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_TRG">REL_TRG</a></span></code>
-<div class="block">"Triggers" (words that are statistically associated with the query word in the same piece of text.)     cow → milking.</div>
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_SYN">REL_SYN</a></span></code>
+<div class="block">Synonyms (words contained within the same WordNet synset)       ocean -> sea.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#REL_TRG">REL_TRG</a></span></code>
+<div class="block">"Triggers" (words that are statistically associated with the query word in the same piece of text.)     cow -> milking.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#SL">SL</a></span></code>
 <div class="block">Sounds like constraint: require that the results are pronounced similarly to this string of characters.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#SP">SP</a></span></code>
 <div class="block">Spelled like constraint: require that the results are spelled similarly to this string of characters, or that
  they match this wildcard pattern.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#TOPICS">TOPICS</a></span></code>
 <div class="block">Topic words: An optional hint to the system about the theme of the document being written.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html#V">V</a></span></code>
 <div class="block">Identifier for the vocabulary to use.</div>
 </td>
@@ -387,7 +394,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_JJA</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_JJA</pre>
-<div class="block">Popular nouns modified by the given adjective, per Google Books Ngrams  gradual → increase.
+<div class="block">Popular nouns modified by the given adjective, per Google Books Ngrams  gradual -> increase.
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -403,7 +410,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_JJB</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_JJB</pre>
-<div class="block">Popular adjectives used to modify the given noun, per Google Books Ngrams       beach → sandy.
+<div class="block">Popular adjectives used to modify the given noun, per Google Books Ngrams       beach -> sandy.
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -419,7 +426,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_SYN</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_SYN</pre>
-<div class="block">Synonyms (words contained within the same WordNet synset)       ocean → sea.
+<div class="block">Synonyms (words contained within the same WordNet synset)       ocean -> sea.
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -435,7 +442,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_TRG</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_TRG</pre>
-<div class="block">"Triggers" (words that are statistically associated with the query word in the same piece of text.)     cow → milking.
+<div class="block">"Triggers" (words that are statistically associated with the query word in the same piece of text.)     cow -> milking.
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -451,7 +458,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_ANT</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_ANT</pre>
-<div class="block">Antonyms (per WordNet)  late → early
+<div class="block">Antonyms (per WordNet)  late -> early
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -467,7 +474,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_SPC</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_SPC</pre>
-<div class="block">"Kind of" (direct hypernyms, per WordNet)       gondola → boat
+<div class="block">"Kind of" (direct hypernyms, per WordNet)       gondola -> boat
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -483,7 +490,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_GEN</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_GEN</pre>
-<div class="block">"More general than" (direct hyponyms, per WordNet)      boat → gondola
+<div class="block">"More general than" (direct hyponyms, per WordNet)      boat -> gondola
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -499,7 +506,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_COM</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_COM</pre>
-<div class="block">"Comprises" (direct holonyms, per WordNet)      car → accelerator
+<div class="block">"Comprises" (direct holonyms, per WordNet)      car -> accelerator
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -515,7 +522,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_PAR</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_PAR</pre>
-<div class="block">"Part of" (direct meronyms, per WordNet)        trunk → tree
+<div class="block">"Part of" (direct meronyms, per WordNet)        trunk -> tree
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -531,7 +538,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_BGA</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_BGA</pre>
-<div class="block">Frequent followers (w′ such that P(w′|w) ≥ 0.001, per Google Books Ngrams)      wreak → havoc
+<div class="block">Frequent followers (w′ such that P(w′|w) ≥ 0.001, per Google Books Ngrams)      wreak -> havoc
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -547,7 +554,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_BGB</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_BGB</pre>
-<div class="block">Frequent predecessors (w′ such that P(w|w′) ≥ 0.001, per Google Books Ngrams)   havoc → wreak
+<div class="block">Frequent predecessors (w′ such that P(w|w′) ≥ 0.001, per Google Books Ngrams)   havoc -> wreak
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -563,7 +570,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_RHY</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_RHY</pre>
-<div class="block">Rhymes ("perfect" rhymes, per RhymeZone)        spade → aid
+<div class="block">Rhymes ("perfect" rhymes, per RhymeZone)        spade -> aid
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -579,7 +586,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_NRY</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_NRY</pre>
-<div class="block">Approximate rhymes (per RhymeZone)      forest → chorus
+<div class="block">Approximate rhymes (per RhymeZone)      forest -> chorus
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -595,7 +602,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_HOM</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_HOM</pre>
-<div class="block">Homophones (sound-alike words)  course → coarse
+<div class="block">Homophones (sound-alike words)  course -> coarse
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -611,7 +618,7 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <li class="blockList">
 <h4>REL_CNS</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> REL_CNS</pre>
-<div class="block">Consonant match         sample → simple
+<div class="block">Consonant match         sample -> simple
  <p>
  Related word constraint: requires that the results, when paired with the word in this parameter, are in a
  predefined lexical relation indicated by [code] of rel_[code]. Any number of these parameters may be specified
@@ -679,12 +686,25 @@ public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.C
 <a name="MD">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>MD</h4>
 <pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> MD</pre>
 <div class="block">A list of single-letter codes (no delimiter) requesting that extra lexical knowledge be included with the
- results. The available metadata codes are as follows:</div>
+ results.</div>
+</li>
+</ul>
+<a name="QE">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>QE</h4>
+<pre>public static final&nbsp;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a> QE</pre>
+<div class="block">Query echo: The presence of this parameter asks the system to prepend a result to the output that describes
+ the query string from some other parameter, specified as the argument value. This is useful for looking up
+ metadata about specific words. For example, /words?sp=flower&qe=sp&md=fr can be used to get the pronunciation
+ and word frequency for flower.</div>
 </li>
 </ul>
 </li>

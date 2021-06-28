@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -108,6 +108,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">WordResult</span>
 extends java.lang.Object</pre>
+<div class="block">Bean Class to store the results from Datamuse</div>
 </li>
 </ul>
 </div>
@@ -144,22 +145,62 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getDefHeadword--">getDefHeadword</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getDefs--">getDefs</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>java.lang.Double</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getFrequency--">getFrequency</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>java.lang.Integer</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getNumSyllables--">getNumSyllables</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getPronunciation--">getPronunciation</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.Integer</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getScore--">getScore</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getTags--">getTags</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getWord--">getWord</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#getWordType--">getWordType</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#setDefHeadword-java.lang.String-">setDefHeadword</a></span>(java.lang.String&nbsp;defHeadword)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#setDefs-java.util.List-">setDefs</a></span>(java.util.List&lt;java.lang.String&gt;&nbsp;defs)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#setNumSyllables-java.lang.Integer-">setNumSyllables</a></span>(java.lang.Integer&nbsp;syllables)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#setScore-java.lang.Integer-">setScore</a></span>(java.lang.Integer&nbsp;score)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#setTags-java.util.List-">setTags</a></span>(java.util.List&lt;java.lang.String&gt;&nbsp;tags)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/WordResult.html#setWord-java.lang.String-">setWord</a></span>(java.lang.String&nbsp;word)</code>&nbsp;</td>
 </tr>
@@ -211,6 +252,15 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;java.lang.String&nbsp;getWord()</pre>
 </li>
 </ul>
+<a name="getDefHeadword--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefHeadword</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getDefHeadword()</pre>
+</li>
+</ul>
 <a name="getScore--">
 <!--   -->
 </a>
@@ -238,13 +288,94 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;getTags()</pre>
 </li>
 </ul>
+<a name="getDefs--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDefs</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;getDefs()</pre>
+</li>
+</ul>
+<a name="getPronunciation--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPronunciation</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getPronunciation()</pre>
+</li>
+</ul>
+<a name="getWordType--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWordType</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getWordType()</pre>
+</li>
+</ul>
+<a name="getFrequency--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFrequency</h4>
+<pre>public&nbsp;java.lang.Double&nbsp;getFrequency()</pre>
+</li>
+</ul>
 <a name="setWord-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setWord</h4>
+<pre>public&nbsp;void&nbsp;setWord(java.lang.String&nbsp;word)</pre>
+</li>
+</ul>
+<a name="setDefHeadword-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefHeadword</h4>
+<pre>public&nbsp;void&nbsp;setDefHeadword(java.lang.String&nbsp;defHeadword)</pre>
+</li>
+</ul>
+<a name="setNumSyllables-java.lang.Integer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNumSyllables</h4>
+<pre>public&nbsp;void&nbsp;setNumSyllables(java.lang.Integer&nbsp;syllables)</pre>
+</li>
+</ul>
+<a name="setScore-java.lang.Integer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setScore</h4>
+<pre>public&nbsp;void&nbsp;setScore(java.lang.Integer&nbsp;score)</pre>
+</li>
+</ul>
+<a name="setDefs-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefs</h4>
+<pre>public&nbsp;void&nbsp;setDefs(java.util.List&lt;java.lang.String&gt;&nbsp;defs)</pre>
+</li>
+</ul>
+<a name="setTags-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setWord</h4>
-<pre>public&nbsp;void&nbsp;setWord(java.lang.String&nbsp;word)</pre>
+<h4>setTags</h4>
+<pre>public&nbsp;void&nbsp;setTags(java.util.List&lt;java.lang.String&gt;&nbsp;tags)</pre>
 </li>
 </ul>
 </li>

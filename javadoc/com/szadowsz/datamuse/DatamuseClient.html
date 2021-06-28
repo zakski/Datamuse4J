@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -147,26 +147,59 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#complexQuery-java.util.Map-">complexQuery</a></span>(java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)</code>
+<div class="block">Find words which are "like", for complex queries</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#meansLike-java.lang.String-">meansLike</a></span>(java.lang.String&nbsp;wordPhrase)</code>
 <div class="block">Returns a list of similar words to the word/phrase supplied.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#meansLike-java.lang.String-java.util.Map-">meansLike</a></span>(java.lang.String&nbsp;wordPhrase,
+         java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)</code>
+<div class="block">Returns a list of similar words to the word/phrase supplied.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#metadataOf-java.lang.String-">metadataOf</a></span>(java.lang.String&nbsp;wordPhrase)</code>
+<div class="block">Find words which are spelt the same as the specified word/phrase.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#prefixHintSuggestions-java.lang.String-">prefixHintSuggestions</a></span>(java.lang.String&nbsp;wordPhrase)</code>
 <div class="block">Returns suggestions for what the user may be typing based on what they have typed so far.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#soundsLike-java.lang.String-">soundsLike</a></span>(java.lang.String&nbsp;wordPhrase)</code>
 <div class="block">Find words which sound the same as the specified word/phrase when spoken.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#soundsLike-java.lang.String-java.util.Map-">soundsLike</a></span>(java.lang.String&nbsp;wordPhrase,
+          java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)</code>
+<div class="block">Find words which sound the same as the specified word/phrase when spoken.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#speltLike-java.lang.String-">speltLike</a></span>(java.lang.String&nbsp;wordPhrase)</code>
+<div class="block">Find words which are spelt the same as the specified word/phrase.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/szadowsz/datamuse/DatamuseClient.html#speltLike-java.lang.String-java.util.Map-">speltLike</a></span>(java.lang.String&nbsp;wordPhrase,
+         java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)</code>
 <div class="block">Find words which are spelt the same as the specified word/phrase.</div>
 </td>
 </tr>
@@ -239,6 +272,28 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a name="meansLike-java.lang.String-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>meansLike</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;&nbsp;meansLike(java.lang.String&nbsp;wordPhrase,
+                                            java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)
+                                     throws <a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a>,
+                                            java.io.IOException</pre>
+<div class="block">Returns a list of similar words to the word/phrase supplied.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>wordPhrase</code> - A word or phrase.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A list of similar words.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a></code></dd>
+<dd><code>java.io.IOException</code></dd>
+</dl>
+</li>
+</ul>
 <a name="soundsLike-java.lang.String-">
 <!--   -->
 </a>
@@ -246,6 +301,28 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>soundsLike</h4>
 <pre>public&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;&nbsp;soundsLike(java.lang.String&nbsp;wordPhrase)
+                                      throws <a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a>,
+                                             java.io.IOException</pre>
+<div class="block">Find words which sound the same as the specified word/phrase when spoken.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>wordPhrase</code> - A word or phrase.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A list of words/phrases which sound similar when spoken.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a></code></dd>
+<dd><code>java.io.IOException</code></dd>
+</dl>
+</li>
+</ul>
+<a name="soundsLike-java.lang.String-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>soundsLike</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;&nbsp;soundsLike(java.lang.String&nbsp;wordPhrase,
+                                             java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)
                                       throws <a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a>,
                                              java.io.IOException</pre>
 <div class="block">Find words which sound the same as the specified word/phrase when spoken.</div>
@@ -281,10 +358,32 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a name="speltLike-java.lang.String-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>speltLike</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;&nbsp;speltLike(java.lang.String&nbsp;wordPhrase,
+                                            java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)
+                                     throws <a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a>,
+                                            java.io.IOException</pre>
+<div class="block">Find words which are spelt the same as the specified word/phrase.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>wordPhrase</code> - A word or phrase.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A list of words/phrases which are spelt similar.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a></code></dd>
+<dd><code>java.io.IOException</code></dd>
+</dl>
+</li>
+</ul>
 <a name="prefixHintSuggestions-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>prefixHintSuggestions</h4>
 <pre>public&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;&nbsp;prefixHintSuggestions(java.lang.String&nbsp;wordPhrase)
@@ -297,6 +396,48 @@ extends java.lang.Object</pre>
 <dd><code>wordPhrase</code> - The current word or phrase.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>Suggestions of what the user may be typing.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a></code></dd>
+<dd><code>java.io.IOException</code></dd>
+</dl>
+</li>
+</ul>
+<a name="complexQuery-java.util.Map-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>complexQuery</h4>
+<pre>public&nbsp;&lt;T&gt;&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;&nbsp;complexQuery(java.util.Map&lt;<a href="../../../com/szadowsz/datamuse/DatamuseParam.Code.html" title="enum in com.szadowsz.datamuse">DatamuseParam.Code</a>,java.lang.String&gt;&nbsp;options)
+                                            throws <a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a>,
+                                                   java.io.IOException</pre>
+<div class="block">Find words which are "like", for complex queries</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>options</code> - a map of the user supplied query options.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A list of words/phrases which are related to the query.</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a></code> - if there is a validation issue or a non HTTP-200 response is returned</dd>
+<dd><code>java.io.IOException</code> - if there is a general issue with the rest call</dd>
+</dl>
+</li>
+</ul>
+<a name="metadataOf-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>metadataOf</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../com/szadowsz/datamuse/WordResult.html" title="class in com.szadowsz.datamuse">WordResult</a>&gt;&nbsp;metadataOf(java.lang.String&nbsp;wordPhrase)
+                                      throws <a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a>,
+                                             java.io.IOException</pre>
+<div class="block">Find words which are spelt the same as the specified word/phrase.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>wordPhrase</code> - A word or phrase.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A list of words/phrases which are spelt similar.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="../../../com/szadowsz/datamuse/DatamuseException.html" title="class in com.szadowsz.datamuse">DatamuseException</a></code></dd>
 <dd><code>java.io.IOException</code></dd>

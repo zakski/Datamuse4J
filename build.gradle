@@ -1,13 +1,24 @@
 /* Standard plugins documentation is available here https://docs.gradle.org/current/userguide/standard_plugins.html. */
+buildscript {
+    dependencies { classpath 'org.eclipse.jgit:org.eclipse.jgit:3.2.0.201312181205-r' }
+}
+
 plugins {
     id 'idea'
     id 'java'
+    id 'nebula.maven-publish' version '17.0.0'
+    id 'nebula.maven-scm' version '17.0.0'
+    id 'nebula.gradle-git-scm' version '4.2.0'
+    id 'nebula.info-scm' version '9.3.0'
+    id 'nebula.javadoc-jar' version '17.0.0'
+    id 'nebula.source-jar' version '17.0.0'
+    id "nebula.release" version "15.3.1"
 }
 apply from: file("versions.gradle")
 
 /* Equivalent to groupid and version in maven, artifactid is set in settings.gradle.  */
 group 'com.szadowsz'
-version '0.1.0-ALPHA'
+description = "Datamuse4J is a handler for calling the Datamuse RESTful API."
 
 repositories {
     mavenCentral()
@@ -42,14 +53,43 @@ dependencies {
     testImplementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.31'
     // https://mvnrepository.com/artifact/log4j/log4j
     testImplementation group: 'log4j', name: 'log4j', version: '1.2.17'
-
 }
 
+publishing {
+    publications {
+        nebula(MavenPublication) {
+            pom {
+                url = 'https://github.com/zakski/Datamuse4J'
+                licenses {
+                    license {
+                        name = 'GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1'
+                        url = 'https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'zakski'
+                        email = 'zak.szadowski@gmail.com'
+                        organization='szadowsz'
+                        organizationUrl = 'https://szadowsz.com'
+                    }
+                }
+            }
+         }
+    }
+}
 /**
  * Task to generate the javadoc folder for easy perusal on Github
  */
-task generateJavadoc(type: Javadoc) {
+task generateJavadocForRepo(type: Javadoc) {
+    group = 'documentation'
+    classpath = project.sourceSets.main.runtimeClasspath
     source = sourceSets.main.allJava
     destinationDir = reporting.file("$projectDir/javadoc")
     dependsOn jar
+}
+
+// Don't lint the javadoc
+tasks.withType(Javadoc) {
+    options.addBooleanOption('Xdoclint:none', true)
 }
