@@ -4,15 +4,18 @@ buildscript {
 }
 
 plugins {
-    id 'idea'
-    id 'java'
-    id 'nebula.maven-publish' version '17.0.0'
+    id 'idea' // intellij ide support
+    id 'java' // standard java library plugin
+    id 'signing' // support for signing the java lib jars
+    id 'nebula.maven-publish' version '17.0.0' // plugin to publish in maven style
+
+    // TODO figure out better automation for scm info
     id 'nebula.maven-scm' version '17.0.0'
-    id 'nebula.gradle-git-scm' version '4.2.0'
     id 'nebula.info-scm' version '9.3.0'
-    id 'nebula.javadoc-jar' version '17.0.0'
-    id 'nebula.source-jar' version '17.0.0'
-    id "nebula.release" version "15.3.1"
+
+    id 'nebula.javadoc-jar' version '17.0.0' // plugin to create javadocs jar
+    id 'nebula.source-jar' version '17.0.0' // plugin to create source jar
+    id "nebula.release" version "15.3.1" // plugin to provide semantic versioning
 }
 apply from: file("versions.gradle")
 
@@ -35,6 +38,22 @@ test {
     useJUnitPlatform()
 }
 
+/**
+ * Task to generate the javadoc folder for easy perusal on Github
+ */
+task generateJavadocForRepo(type: Javadoc) {
+    group = 'documentation'
+    classpath = project.sourceSets.main.runtimeClasspath
+    source = sourceSets.main.allJava
+    destinationDir = reporting.file("$projectDir/javadoc")
+    dependsOn jar
+}
+
+// Don't lint the javadoc
+tasks.withType(Javadoc) {
+    options.addBooleanOption('Xdoclint:none', true)
+}
+
 dependencies {
     // https://mvnrepository.com/artifact/com.codesnippets4all/quick-json
     implementation group: 'com.codesnippets4all', name: 'quick-json', version: versions.quick_json
@@ -55,6 +74,15 @@ dependencies {
     testImplementation group: 'log4j', name: 'log4j', version: '1.2.17'
 }
 
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign configurations.archives
+}
+
 publishing {
     publications {
         nebula(MavenPublication) {
@@ -64,6 +92,7 @@ publishing {
                     license {
                         name = 'GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1'
                         url = 'https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html'
+                        distribution = 'repo'
                     }
                 }
                 developers {
@@ -74,22 +103,29 @@ publishing {
                         organizationUrl = 'https://szadowsz.com'
                     }
                 }
+                scm {
+                    connection ='scm:git@github.com:zakski/Datamuse4j.git'
+                    developerConnection = 'scm:git@github.com:zakski/Datamuse4j.git'
+                }
             }
          }
     }
-}
-/**
- * Task to generate the javadoc folder for easy perusal on Github
- */
-task generateJavadocForRepo(type: Javadoc) {
-    group = 'documentation'
-    classpath = project.sourceSets.main.runtimeClasspath
-    source = sourceSets.main.allJava
-    destinationDir = reporting.file("$projectDir/javadoc")
-    dependsOn jar
-}
-
-// Don't lint the javadoc
-tasks.withType(Javadoc) {
-    options.addBooleanOption('Xdoclint:none', true)
+    repositories {
+        maven {
+            name "SonatypeStaging"
+            url "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            credentials {
+                username = project.ossrhUsername
+                password = project.ossrhPassword
+            }
+        }
+        maven {
+            name "SonatypeSnapshot"
+            url "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+            credentials {
+                username = project.ossrhUsername
+                password = project.ossrhPassword
+            }
+        }
+    }
 }
