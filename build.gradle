@@ -80,7 +80,7 @@ artifacts {
 
 signing {
     useInMemoryPgpKeys(signingKey, signingPassword)
-    sign configurations.archives
+    sign publishing.publications.nebula
 }
 
 publishing {
