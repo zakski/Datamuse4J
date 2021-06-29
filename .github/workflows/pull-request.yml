@@ -35,7 +35,7 @@ jobs:
     needs: build-and-test
     runs-on: ubuntu-latest
     # the build-and-test job might be skipped, we don't need to run this job then
-    if: success() || failure(
+    if: success() || failure()
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v2
