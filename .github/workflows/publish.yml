@@ -69,7 +69,7 @@ jobs:
           GPG_SIGNING_PASSWORD: ${{ secrets.GPG_SIGNING_PASSWORD }}
           OSSRH_ID: ${{ secrets.OSSRH_ID }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        run: ./gradlew publishNebulaPublicationToSonatypeSnapshotRepository -x test -Prelease.stage=final -PossrhUsername=$OSSRH_ID -PossrhPassword=OSSRH_PASSWORD -PsigningKey=GPG_SIGNING_KEY -PsigningPassword=GPG_SIGNING_PASSWORD
+        run: ./gradlew publishNebulaPublicationToSonatypeSnapshotRepository -x test -Prelease.stage=final -PossrhUsername=$OSSRH_ID -PossrhPassword=$OSSRH_PASSWORD -PsigningKey=$GPG_SIGNING_KEY -PsigningPassword=$GPG_SIGNING_PASSWORD
   tag-repo:
     name: "Tag Repo With Latest Version"
     needs: build-and-test
