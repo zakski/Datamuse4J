@@ -70,3 +70,20 @@ jobs:
           OSSRH_ID: ${{ secrets.OSSRH_ID }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
         run: ./gradlew publishNebulaPublicationToSonatypeSnapshotRepository -x test -Prelease.stage=final -PossrhUsername=$OSSRH_ID -PossrhPassword=OSSRH_PASSWORD -PsigningKey=GPG_SIGNING_KEY -PsigningPassword=GPG_SIGNING_PASSWORD
+  tag-repo:
+    name: "Tag Repo With Latest Version"
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v2
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build with Gradle
+        run: ./gradlew final -x test -Prelease.stage=final
