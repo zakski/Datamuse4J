@@ -72,7 +72,7 @@ jobs:
         run: ./gradlew publishNebulaPublicationToSonatypeSnapshotRepository -x test -Prelease.stage=final -PossrhUsername=$OSSRH_ID -PossrhPassword=$OSSRH_PASSWORD -PsigningKey=$GPG_SIGNING_KEY -PsigningPassword=$GPG_SIGNING_PASSWORD
   tag-repo:
     name: "Tag Repo With Latest Version"
-    needs: build-and-test
+    needs: publish-artifacts
     runs-on: ubuntu-latest
     if: success()
     steps:
@@ -85,5 +85,8 @@ jobs:
           distribution: 'adopt'
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Build with Gradle
-        run: ./gradlew final -x test -Prelease.stage=final
+      - name: Tag with Gradle
+        env:
+          GIT_USER: ${{ secrets.GIT_USER }}
+          GIT_PASS: ${{ secrets.GIT_TOKEN }}
+        run: ./gradlew final -x test -Prelease.stage=final -Dorg.ajoberstar.grgit.auth.username=$GIT_USER -Dorg.ajoberstar.grgit.auth.password=$GIT_PASS
