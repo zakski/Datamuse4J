@@ -1,7 +1,8 @@
 # Datamuse4J
 
 ## What Is It
-Datamuse4J is a handler for calling the Datamuse RESTful API. Some background information on Datamuse:
+Datamuse4J is a handler for calling the [Datamuse RESTful API](https://www.datamuse.com/api/). Some background 
+information on Datamuse:
 
 > The Datamuse API is a word-finding query engine for developers. You can use it in your apps to find words that match a 
 > given set of constraints and that are likely in a given context. You can specify a wide variety of constraints on 
@@ -31,18 +32,18 @@ day, please describe your application (and a traffic estimate) in a message to
 ### Summary
 Here is a brief summary of what this code can do (See the [Javadoc](javadoc/overview-tree.html) for full information):
 
-**GET** `/words{?rd,sl,sp,max}`
-
-**rd** `.findSimilar` “Reverse dictionary” constraint: show terms that have a meaning similar to this concept, which may 
+* **meansLike** “Reverse dictionary” constraint: show terms that have a meaning similar to this concept, which may 
 be any word or sequence of words.
 
-**sl** `.soundsSimilar` “Sounds like” constraint: show terms that are pronounced similarly to this string of characters.
+* **soundsLike** “Sounds like” constraint: show terms that are pronounced similarly to this string of characters.
 
-**sp** `.speltSimilar` “Spelled like” constraint: shows terms that are spelled similarly to this string of characters, 
+* **speltLike** “Spelled like” constraint: shows terms that are spelled similarly to this string of characters, 
 or that match this wildcard pattern.
 
-**GET** `/sug{?s,max}`
+* **complexQuery** An option for complex constraints; a method that allows you to combine multiple constraints
 
-**s** `.prefixHintSuggestions` Prefix hint string; typically, the characters that the user has entered so far into a 
+* **prefixHintSuggestions** Prefix hint string; typically, the characters that the user has entered so far into a 
 search box. (Note: The results are sorted by popularity and may include spell-corrections of the prefix hint. That is to 
 say, the prefix hint will not necessarily form a prefix of each result.)
+
+* **metadataOf** Get the metadata of the specified word; the frequency, number of syllables, pronunciation, etc.

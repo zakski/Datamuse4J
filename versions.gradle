@@ -1,0 +1,13 @@
+//========================================================
+// Specify version numbers used by each library that is depended upon.
+//========================================================
+
+ext.versions = [:]
+
+// Compile Dependencies
+versions.quick_json = '1.0.4'
+versions.retrofit = '2.9.0'
+
+// Test Dependencies
+versions.junit_platform = '1.7.1'
+versions.junit_jupiter = '5.7.1'
