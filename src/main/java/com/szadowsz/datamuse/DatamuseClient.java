@@ -189,10 +189,10 @@ public class DatamuseClient {
     }
 
     /**
-     * Find words which are spelt the same as the specified word/phrase.
+     * Get the metadata of the specified word
      *
      * @param wordPhrase A word or phrase.
-     * @return A list of words/phrases which are spelt similar.
+     * @return A list of words/phrases containing 0 or 1 result detailing the metadata.
      */
     public List<WordResult> metadataOf(String wordPhrase) throws DatamuseException, IOException {
         // validation and sanitation
