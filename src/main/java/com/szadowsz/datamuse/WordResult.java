@@ -18,6 +18,7 @@ package com.szadowsz.datamuse;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -44,6 +45,7 @@ public class WordResult {
     private String pronunciation;
     private Double frequency;
     private String wordType;
+    private final List<String> corrections = new ArrayList<>();
 
     public String getWord() {
         return word;
@@ -77,6 +79,10 @@ public class WordResult {
         return wordType;
     }
 
+    public List<String> getCorrections() {
+        return corrections;
+    }
+
     public Double getFrequency(){
         return frequency;
     }
@@ -102,13 +108,13 @@ public class WordResult {
     public void setTags(List<String> tags) {
         this.tags = tags;
         if (!tags.isEmpty()){
+            tags.stream().filter(s -> s.startsWith("spellcor:")).map(s -> s.substring(9)).forEach(corrections::add);
             this.pronunciation = tags.stream().filter(s -> s.startsWith("pron:"))
                     .findFirst().map(s -> s.substring(5)).orElse(null);
             this.frequency = tags.stream().filter(s -> s.startsWith("f:"))
                     .findFirst().map(s -> Double.valueOf(s.substring(2))).orElse(0.0);
-            this.wordType = tags.stream().filter(s -> !s.startsWith("pron:") && !s.startsWith("f:") && !s.equals("query"))
+            this.wordType = tags.stream().filter(s -> !s.startsWith("spellcor:") && !s.startsWith("pron:") && !s.startsWith("f:") && !s.equals("query"))
                     .findFirst().orElse(null);
-
         }
     }
   }
