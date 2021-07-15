@@ -22,7 +22,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build --info -Prelease.stage=final
+      run: ./gradlew build --info --stacktrace -Prelease.stage=final
     - name: Upload Unit Test Results
       if: always()
       uses: actions/upload-artifact@v2
